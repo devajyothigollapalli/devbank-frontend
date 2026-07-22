@@ -31,7 +31,7 @@ setTxns(sorted);
 })
 .catch(err=>console.error(err));
 
-},[accountNo]);
+},[accountNo, user?.accountNo]);
 
 return(
 
@@ -70,12 +70,12 @@ No Transactions Found
 
 {txns.map((txn,index)=>{
 
-// 🔥 NEW LOGIC
+
 const remarks = txn.remarks?.toLowerCase() || "";
 
 const isWithdrawal = remarks.includes("withdraw");
 const isTransfer = remarks.includes("transfer");
-const isDeposit = !isWithdrawal && !isTransfer;
+
 
 return(
 

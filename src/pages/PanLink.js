@@ -105,10 +105,9 @@ setLoading(false);
 
 checkPan();
 
-},[]);
+},[user.accountNo]);
 
 
-// 🔥 MAIN FUNCTION
 const linkPan = async()=>{
 
 // 🔴 frontend validation

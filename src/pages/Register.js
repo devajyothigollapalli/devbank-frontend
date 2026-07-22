@@ -18,9 +18,9 @@ role:"",
 
 const [otp,setOtp] = useState("");
 const [sent,setSent] = useState(false);
-const [loading,setLoading] = useState(false);
+const [,setLoading] = useState(false);
 const [msg,setMsg] = useState("");
-const [type,setType] = useState(""); // ✅ NEW (for styling)
+const [type,setType] = useState(""); 
 
 const [showConfetti,setShowConfetti] = useState(false);
 const [accountType,setAccountType] = useState("");
@@ -51,7 +51,6 @@ setMsg("OTP Sent Successfully");
 
 setType("error");
 
-// ✅ FIX HERE
 if(e.response){
 setMsg(e.response.data.message || "Failed to send OTP");
 }else{
@@ -102,7 +101,6 @@ nav("/");
 
 setType("error");
 
-// ✅ FIX HERE
 if(e.response){
 setMsg(e.response.data.message || e.response.data);
 }else{

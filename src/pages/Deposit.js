@@ -33,9 +33,9 @@ try{
 
 setLoading(true);
 
-const res = await api.put(`/depositCash/${id}`,{
-balance:Number(amount),
-pinNo:Number(pin)
+await api.put(`/depositCash/${id}`, {
+  balance: Number(amount),
+  pinNo: Number(pin)
 });
 
 setType("success");

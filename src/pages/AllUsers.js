@@ -140,7 +140,7 @@ return;
 
 loadUsers();
 
-},[]);
+}, [loadUsers, navigate, user]);
 
 
 /* ===== LOAD USERS ===== */

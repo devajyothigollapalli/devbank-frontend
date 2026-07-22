@@ -15,7 +15,7 @@ useEffect(()=>{
 if(!user){
 navigate("/");
 }
-},[]);
+},[navigate,user]);
 
 /* LOGOUT */
 const logout=()=>{
