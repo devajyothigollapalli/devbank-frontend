@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import { api } from "../api/api";
@@ -129,36 +129,27 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 /* ===== LOAD USERS ===== */
 
-const loadUsers = async()=>{
-
-try{
-setLoading(true);
-const res = await api.get(`/allusers/${user.accountNo}`);
-setUsers(res.data);
-}catch{}
-finally{
-setLoading(false);
-}
-
-};
+const loadUsers = useCallback(async () => {
+  try {
+    setLoading(true);
+    const res = await api.get(`/allusers/${user.accountNo}`);
+    setUsers(res.data);
+  } catch {
+  } finally {
+    setLoading(false);
+  }
+}, [user]);
 /* ===== AUTH CHECK ===== */
 
-useEffect(()=>{
+useEffect(() => {
+  if (!user || !["CEO", "FOUNDER", "MANAGER"].includes(user.role?.toUpperCase())) {
+    alert("Unauthorized Access");
+    navigate("/dashboard");
+    return;
+  }
 
-if(!user || !["CEO","FOUNDER","MANAGER"]
-.includes(user.role?.toUpperCase())){
-
-alert("Unauthorized Access");
-navigate("/dashboard");
-return;
-
-}
-
-loadUsers();
-
+  loadUsers();
 }, [loadUsers, navigate, user]);
-
-
 /* ===== PASSWORD===== */
 
 const handlePassword = (accNo,value)=>{
