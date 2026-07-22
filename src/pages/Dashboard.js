@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {FaUserCircle,FaHistory,FaHome,FaServicestack} from "react-icons/fa";
-
+import logo from "../assets/logo.png";
 function Dashboard(){
 
 const navigate = useNavigate();
@@ -92,7 +92,7 @@ Logout
 <div style={styles.home}>
 
 <img
-src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png"
+src={logo}
 alt="logo"
 style={styles.logo}
 />
@@ -290,8 +290,8 @@ padding:"10px"
 },
 
 logo:{
-width:"80px",
-marginBottom:"10px"
+width:"200px",
+marginBottom:"5px"
 },
 
 quote:{
