@@ -125,22 +125,6 @@ const [loading,setLoading] = useState(false);
 const navigate = useNavigate();
 const user = JSON.parse(localStorage.getItem("user"));
 
-/* ===== AUTH CHECK ===== */
-
-useEffect(()=>{
-
-if(!user || !["CEO","FOUNDER","MANAGER"]
-.includes(user.role?.toUpperCase())){
-
-alert("Unauthorized Access");
-navigate("/dashboard");
-return;
-
-}
-
-loadUsers();
-
-}, [loadUsers, navigate, user]);
 
 
 /* ===== LOAD USERS ===== */
@@ -157,6 +141,22 @@ setLoading(false);
 }
 
 };
+/* ===== AUTH CHECK ===== */
+
+useEffect(()=>{
+
+if(!user || !["CEO","FOUNDER","MANAGER"]
+.includes(user.role?.toUpperCase())){
+
+alert("Unauthorized Access");
+navigate("/dashboard");
+return;
+
+}
+
+loadUsers();
+
+}, [loadUsers, navigate, user]);
 
 
 /* ===== PASSWORD===== */

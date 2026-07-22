@@ -110,10 +110,10 @@ function CibilScore() {
     }
   };
 
-  useEffect(() => {
-    fetchScore();
-  }, []);
-
+useEffect(() => {
+  fetchScore();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
   // 🎯 Score color + rating
   const getColor = () => {
     if (score >= 750) return "green";
