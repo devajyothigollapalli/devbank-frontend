@@ -35,7 +35,7 @@ function ForgotPin(){
     setLoading(true);
 
     const res = await axios.post(
-      "http://localhost:8080/api/fetch/sendOtp",
+      "http://devbank-backend-production.up.railway.app/api/fetch/sendOtp",
       { mail }
     );
 
@@ -81,7 +81,7 @@ function ForgotPin(){
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:8080/api/forgotPin",
+        "http://devbank-backend-production.up.railway.app/api/forgotPin",
         {
           accountNo:Number(accountNo),
           mail,

@@ -22,7 +22,7 @@ function SetPin() {
       setError("");
 
       await axios.post(
-        "http://localhost:8080/api/fetch/sendOtp",
+        "http://devbank-backend-production.up.railway.app/api/fetch/sendOtp",
         {
           mail: user.mail,
           accountHolder: user.accountHolder
@@ -59,7 +59,7 @@ function SetPin() {
       setLoading(true);
 
       const res = await axios.put(
-        "http://localhost:8080/api/pinSetWithOtp",
+        "http://devbank-backend-production.up.railway.app/api/pinSetWithOtp",
         {
           accountNo: user.accountNo,
           mail: user.mail,

@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 
 const api = axios.create({
-  baseURL:"http://localhost:8080/api"
+  baseURL:"http://devbank-backend-production.up.railway.app/api"
 });
 
 function Withdraw(){

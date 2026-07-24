@@ -34,7 +34,7 @@ function ForgotPassword(){
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:8080/api/fetch/sendOtp",
+        "http://devbank-backend-production.up.railway.app/api/fetch/sendOtp",
         { mail }
       );
 
@@ -76,7 +76,7 @@ function ForgotPassword(){
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:8080/api/forgotPassword",
+        "http://devbank-backend-production.up.railway.app/api/forgotPassword",
         {
           accountNo:Number(accountNo),
           mail,

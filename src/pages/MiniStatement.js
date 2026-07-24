@@ -31,7 +31,7 @@ try{
 setLoading(true);
 
 const res = await axios.post(
-"http://localhost:8080/api/miniStatement",
+"http://devbank-backend-production.up.railway.app/api/miniStatement",
 {
 accountNo:Number(accountNo),
 pin:Number(pin)
