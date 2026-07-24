@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Named export for API instance
 export const api = axios.create({
-  baseURL: "http://localhost:8080/api"
+  baseURL: "http://devbank-backend-production.up.railway.app/api"
 });
 
 // Named export for error handler
