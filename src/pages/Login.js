@@ -5,7 +5,7 @@ import Preloader from "../components/Preloader";
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:"http://devbank-backend-production.up.railway.app/api"
+  baseURL:"https://devbank-backend-production.up.railway.app/api"
 });
 
 function Login(){

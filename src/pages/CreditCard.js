@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 
 const api = axios.create({
-  baseURL:"http://devbank-backend-production.up.railway.app/api"
+  baseURL:"https://devbank-backend-production.up.railway.app/api"
 });
 
 function CreditCard(){
